@@ -1,0 +1,31 @@
+
+#!/bin/bash
+
+# Update package list
+sudo apt-get update
+
+# Install Apache 2
+sudo apt-get install -y apache2
+
+# Install PHP 7.2
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get install -y php7.2
+
+# Install PostgreSQL 14
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install -y postgresql-14
+
+# Install Python 3.7
+sudo apt-get install -y python3.7 python3.7-dev python3.7-venv
+
+# Install Python libraries
+sudo apt-get install -y python3-pip
+pip3 install beautifulsoup4 freezegun ll-xist lxml 'pillow>=2.3' psycopg2 python-ldap Sphinx
+
+# Set Python 3.7 as the default
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
