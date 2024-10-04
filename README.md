@@ -31,7 +31,7 @@ To get started, follow these steps:
 3. Import the `videogamerental.sql` file into your MySQL server
 4. Update the database credentials in `connection.php`
 5. Run the XAMPP server
-6. Navigate to `http://localhost/video-game-rental-system` in your web browser
+6. Navigate to `http://localhost/videogame-rental` in your web browser
 
 To run the admin dashboard, follow these additional steps:
 
